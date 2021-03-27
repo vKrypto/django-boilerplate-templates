@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock%}</title>
+        {% include './includes/_headers.html' %}
+    </head>
+    <nav>
+        {% include './includes/_navbar.html' %}
+    </nav>
+     {% include './includes/_breadcrumb.html' %}
+    <body>
+        {% block content %}
+            
+        {% endblock %}
+    </body>
+    <footer>
+        {% include './includes/_footers.html' %}
+    </footer>
+    {% include './includes/_bundled_assets.html'%}
+</html> 
