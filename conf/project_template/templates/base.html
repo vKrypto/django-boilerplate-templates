@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
         <title>{% block title %}{% endblock%}</title>
         {% include './includes/_headers.html' %}
     </head>
-    <nav>
+    <header class="header-global">
         {% include './includes/_navbar.html' %}
-    </nav>
+    </header>
+
      {% include './includes/_breadcrumb.html' %}
-    <body>
+    <main>
+        <div class="preloader bg-soft flex-column justify-content-center align-items-center">
+            <img class="loader-element animate__animated animate__jackInTheBox" src="/static/assets/img/brand/light.svg" height="60" alt="Volt logo">
+        </div>
+
         {% block content %}
             
         {% endblock %}
-    </body>
+    </main>
     <footer>
         {% include './includes/_footers.html' %}
     </footer>
