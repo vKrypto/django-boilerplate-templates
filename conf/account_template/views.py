@@ -15,7 +15,7 @@ from .serializers import *
 """ all views goes here."""
 
 
-def login_view(request):
+def signin(request):
     form = LoginForm(request.POST or None)
 
     msg = None
@@ -36,7 +36,7 @@ def login_view(request):
 
     return render(request, "accounts/login.html", {"form": form, "msg" : msg})
 
-def register_user(request):
+def signup(request):
 
     msg     = None
     success = False
