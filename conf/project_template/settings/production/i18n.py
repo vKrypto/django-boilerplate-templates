@@ -33,13 +33,14 @@ LANGUAGES = [
 
 LOCALE_PATHS = [BASE_DIR.joinpath('locale')]
 
+# https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#time-zone
 TIME_ZONE = 'UTC'
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#std:setting-USE_I18N
 USE_I18N = True
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
 USE_L10N = True
-
+# https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
 

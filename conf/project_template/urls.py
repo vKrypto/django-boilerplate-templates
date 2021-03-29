@@ -20,8 +20,16 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+# addgn app urls..
 for app in os.listdir('apps'):
     if 'urls.py' in os.listdir('apps/'+ app):
         urlpatterns += [
             path(app+'/', include('apps.'+app+'.urls'), name=app)
         ]
+
+
+if settings.DEBUG:
+    urlpatterns += [
+        path('__debug__/', include('debug_toolbar.urls')),
+    ]

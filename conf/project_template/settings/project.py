@@ -39,6 +39,9 @@ CORE_INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 INSTALLED_APPS =[] # define if their is no order required corresponding to others
 
 WEIGHTED_INSTALLED_APPS = [
