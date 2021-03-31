@@ -11,7 +11,7 @@ def sort_by_weight(weighted_list):
         for entry in sorted(weighted_list):
             if len(entry)==2:
                 _, app_name = entry
-                if isinstance(entry,(str)):
+                if isinstance(app_name,(str)):
                     sorted_list.append(app_name)
     except ValueError as e:
         raise ImproperlyConfigured("please define weighted_vaLues as =>> (3, 'value...') ")
