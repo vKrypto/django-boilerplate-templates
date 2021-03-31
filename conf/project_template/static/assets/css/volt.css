@@ -41710,3 +41710,9 @@ article .h1, article .h2, article .h3, article .h4, article .h5, article .h6 {
 .simplebar-scrollbar::before {
     background-color: #131620;
 }
+
+input[name="username"], input[name="login"], input[name="password"], input[name="password1"], input[name="email"]{
+    width: calc( 100% - 2.5rem );
+    border:0.0625rem solid #d1d7e0;
+    border-left:0;
+}

@@ -10,8 +10,7 @@ django-admin startapp accounts --verbosity 2 --template ../../conf/account_templ
 cd ..
 python3 manage.py makemigrations
 python3 manage.py migrate 
-python3 manage.py collectstatic
+python3 manage.py collectstatic --noinput 
 python3 manage.py makemessages --ignore venv --all
 python3 manage.py compilemessages
-python3 manage.py collectstatic
 python3 manage.py runserver
