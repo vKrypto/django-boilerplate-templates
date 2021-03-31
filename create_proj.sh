@@ -6,7 +6,7 @@ pip freeze > requirements.txt
 django-admin startproject project --verbosity 2 --template ./conf/project_template
 cd project/apps
 django-admin startapp core --verbosity 2 --template ../../conf/app_template
-django-admin startapp accounts --verbosity 2 --template ../../conf/account_template
+django-admin startapp account --verbosity 2 --template ../../conf/account_template
 cd ..
 python3 manage.py makemigrations
 python3 manage.py migrate 

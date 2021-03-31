@@ -2,7 +2,7 @@
 # https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
 from django.utils.translation import gettext_lazy as _
 
-CONTEXT_PROCESSORS +=['django.template.context_processors.i18n']
+context_processors +=['django.template.context_processors.i18n']
 
 MIDDLEWARE +=['django.middleware.locale.LocaleMiddleware']
 
@@ -27,8 +27,7 @@ LANGUAGES = [
     ('tr', _('Turkish')),
     ('uk', _('Ukrainian')),
     ('vi', _('Vietnamese')),
-    ('zh-hans', _('Chinese'))
-]
+    ('zh-hans', _('Chinese'))]
 
 
 LOCALE_PATHS = [BASE_DIR.joinpath('locale')]

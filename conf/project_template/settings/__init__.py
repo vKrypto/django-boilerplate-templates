@@ -1,18 +1,18 @@
 from split_settings.tools import optional, include
 
 include(
-    'project.py',  # root project settings (not recommended to make any changes here.)
+    'project.py',
     
-    # include project level settings..
-    'default.py', # contains actual/final config/switches.
-    'production/*.py', # contains production-stage configurations.
-    'development/*.py',  # contains testing-stage configurations.
+    # include project settings..
+    'default.py',
+    'production/*.py',
+    'development/*.py',
 
-    # include app level settings.
+    # include in app settings.
     optional('../apps/*/settings/default.py'),
     optional('../apps/*/settings/production.py'),
     optional('../apps/*/settings/development.py'),
-    optional('../apps/*/settings/others/*.py'),
     
-    optional('override.py'), # contains configurations to override switches.
+    # temp settings.
+    optional('local_settings.py')
 )
