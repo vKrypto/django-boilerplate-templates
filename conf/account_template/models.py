@@ -14,10 +14,17 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-
+    """
+    add fields if you want.
+    """
     email = models.EmailField(unique=True)
-    
-    USERNAE_FIELD = 'email'
+
+    # extra fields..
+    fname = models.CharField(max_length=25, null=True)
+    lname = models.CharField(max_length=25, null=True, blank=True)
+
+    username = None 
+    USERNAME_FIELD = 'email'   
     objects = UserManager()
 
     class Meta:

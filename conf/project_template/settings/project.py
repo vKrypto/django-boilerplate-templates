@@ -45,6 +45,7 @@ INTERNAL_IPS = [
 INSTALLED_APPS =[] # define if their is no order required corresponding to others
 
 WEIGHTED_INSTALLED_APPS = [
+    # weight === place, weight 0 means top
     # (weight, app_name),
 ]
 
@@ -64,6 +65,7 @@ CORE_MIDDLEWARE = [
 MIDDLEWARE = []  # define if their is no order required corresponding to others
 
 WEIGHTED_MIDDLEWARE = [
+    # weight === place, weight 0 means top
     # (weight, middleware name),
 ]
 

@@ -15,6 +15,7 @@ Including another URLconf
 """
 import os
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
 
 urlpatterns = [
@@ -29,7 +30,8 @@ for app in os.listdir('apps'):
         ]
 
 
-if settings.DEBUG:
+if getattr(settings, 'DJDT', False):
+    import debug_toolbar
     urlpatterns += [
-        path('__debug__/', include('debug_toolbar.urls')),
+        path('__debug__/', include(debug_toolbar.urls)),
     ]

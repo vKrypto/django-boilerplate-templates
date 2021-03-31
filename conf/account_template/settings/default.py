@@ -10,4 +10,4 @@ WEIGHTED_INSTALLED_APPS = [
     # (weight, app_name),
 ]
 
-AUTH_USER_MODEL = 'apps.{{ app_name }}.User'
+AUTH_USER_MODEL = '{{ app_name }}.User'

@@ -1,18 +1,21 @@
 """
 override any swicth or config here, or declare a final variable here..
 """
+from django.core.exceptions import ImproperlyConfigured
+
+
 def sort_by_weight(weighted_list):
     """ takes a weighted list and return list in order """
     sorted_list = []
-    for entry in sorted(weighted_list):
-        try:
-            if len(entry):
+    try:
+        for entry in sorted(weighted_list):
+            if len(entry)==2:
                 _, app_name = entry
-                sorted_list.append(app_name)
-        except ValueError as e:
-            print("please define weighted_vaLues as =>> (3, 'value...') ")
-            raise e
-    return sorted_list
+                if isinstance(entry,(str)):
+                    sorted_list.append(app_name)
+    except ValueError as e:
+        raise ImproperlyConfigured("please define weighted_vaLues as =>> (3, 'value...') ")
+    return sorted_list[::-1]
 
 
 
