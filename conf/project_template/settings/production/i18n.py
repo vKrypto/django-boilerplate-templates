@@ -2,10 +2,6 @@
 # https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
 from django.utils.translation import gettext_lazy as _
 
-context_processors +=['django.template.context_processors.i18n']
-
-MIDDLEWARE +=['django.middleware.locale.LocaleMiddleware']
-
 LANGUAGES = [
     ('bg', _('Bulgarian')),
     ('de', _('German')),
@@ -29,8 +25,7 @@ LANGUAGES = [
     ('vi', _('Vietnamese')),
     ('zh-hans', _('Chinese'))]
 
-
-LOCALE_PATHS = [BASE_DIR.joinpath('locale')]
+LOCALE_PATHS = (BASE_DIR.joinpath('locale'),)
 
 LANGUAGE_CODE = 'en-us'
 
@@ -41,4 +36,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
