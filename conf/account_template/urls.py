@@ -23,6 +23,5 @@ from .views import *
 
 urlpatterns = [
     path(r'', include('allauth.urls')),
-    url(r'^signup/$', signup, name='signup'),
-    url(r'^signin/$', signin, name='signup'),
+    url(r'^signup/$', signup, name='signup')
 ]

@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import pgettext_lazy
 from django.contrib.auth.models import (
     AbstractBaseUser, BaseUserManager, PermissionsMixin
 )
@@ -21,25 +20,19 @@ class User(AbstractBaseUser):
     objects = UserManager()
 
     class Meta:
-
         ordering = ('-id',)
         permissions = (
-
-            # ('view_user',
-            #  pgettext_lazy('Permission description', 'Can view users')),
+            ('view_user',
+             pgettext_lazy('Permission description', 'Can view users')),
             ('edit_user',
              pgettext_lazy('Permission description', 'Can edit users')),
-
             ('view_group',
              pgettext_lazy('Permission description', 'Can view groups')),
             ('edit_group',
              pgettext_lazy('Permission description', 'Can edit groups')),
-
             ('view_staff',
              pgettext_lazy('Permission description', 'Can view staff')),
             ('edit_staff',
              pgettext_lazy('Permission description', 'Can edit staff')),
-
             ('impersonate_user',
-             pgettext_lazy('Permission description', 'Can impersonate users'))
-        )
+             pgettext_lazy('Permission description', 'Can impersonate users')))
