@@ -19,3 +19,4 @@ python3 manage.py makemessages --ignore venv --all
 python3 manage.py compilemessages
 python3 manage.py collectstatic
 python3 manage.py runserver
+
