@@ -79,15 +79,27 @@ CONTEXT_PROCESSORS = [
 
 ROOT_URLCONF = 'urls'
 
+
+# setup template loaders
+loaders = [
+    'django.template.loaders.filesystem.Loader',
+    'django.template.loaders.app_directories.Loader'
+]
+if not DEBUG:
+    loaders = [('django.template.loaders.cached.Loader', loaders)]
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR.joinpath('templates')],
-        'APP_DIRS': True,
         'OPTIONS': {
+            'debug': DEBUG,
             'context_processors': CONTEXT_PROCESSORS,
-        },
-    },
+            'loaders': loaders,
+            'string_if_invalid': '<< MISSING VARIABLE "%s" >>' if DEBUG else '-',
+            }
+    }
 ]
 
 WSGI_APPLICATION = 'project.wsgi.application'
@@ -138,3 +150,49 @@ STATICFILES_DIRS = [
 # Media files (user upload folder)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR.joinpath('media')
+
+# Customizing logs
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {process:d} {thread:d} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname} {message}',
+            'style': '{',
+        },
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'INFO',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            # 'filters': ['special']
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'propagate': True,
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}
+

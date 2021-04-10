@@ -14,5 +14,7 @@ include(
     optional('../apps/*/settings/development.py'),
     optional('../apps/*/settings/others/*.py'),
     
+    optional('third_party.py'),
+    
     optional('override.py'), # contains configurations to override switches.
 )

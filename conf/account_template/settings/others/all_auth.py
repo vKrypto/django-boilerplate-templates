@@ -23,6 +23,9 @@ INSTALLED_APPS += [
 
 SITE_ID = 1
 
+# for authstate missing in gauth
+SESSION_COOKIE_SAMESITE = None
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#login-redirect-url
 LOGIN_REDIRECT_URL = 'home'
 
@@ -50,8 +53,8 @@ SOCIALACCOUNT_PROVIDERS = {
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
         'APP1': {
-            'client_id': '123',
-            'secret': '456',
+            'client_id': '646567882445-de9h1nnil7891t18g1p3qcnp8hh69kte.apps.googleusercontent.com',
+            'secret': 'gyaFu8VsnSmGCT3s-aZM-2Yp',
             'key': ''
         }
     },
