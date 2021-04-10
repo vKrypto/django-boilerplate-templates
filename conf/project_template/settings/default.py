@@ -24,3 +24,6 @@ MESSAGE_TAGS = {
     messages.WARNING: 'warning',
     messages.SUCCESS: 'success'
 }
+
+# for django:3.2 default primary key field.
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'

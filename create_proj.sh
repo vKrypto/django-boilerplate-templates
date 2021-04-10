@@ -1,10 +1,10 @@
 python3 -m venv venv
 source venv/bin/activate
-# pip install --upgrade pip
-# pip install django split-settings django-allauth django-debug-toolbar
-# pip install django-templated-email
-# pip install django-redis
-# pip freeze > requirements.txt
+pip install --upgrade pip
+pip install django split-settings django-allauth django-debug-toolbar
+pip install django-templated-email
+pip install django-redis
+pip freeze > requirements.txt
 django-admin startproject project --verbosity 2 --template ./conf/project_template
 cd project/apps
 django-admin startapp core --verbosity 2 --template ../../conf/app_template
