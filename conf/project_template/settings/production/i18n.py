@@ -1,5 +1,5 @@
 # Internationalization
-# https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
+# https://docs.djangoproject.com/en/3.1/topics/i18n/
 from django.utils.translation import gettext_lazy as _
 
 CONTEXT_PROCESSORS +=['django.template.context_processors.i18n']

@@ -1,8 +1,8 @@
 
-"""{{ camel_case_app_name }} URL Configuration
+"""Accounts URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/{{ docs_version }}/topics/http/urls/
+    https://docs.djangoproject.com/en/3.1/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -23,6 +23,7 @@ from .views import *
 
 urlpatterns = [
     path(r'', include('allauth.urls')),
-    url(r'^signup/$', signup, name='signup'),
-    url(r'^signin/$', signin, name='signup'),
+    # url(r'^signup/$', SignupView.as_view(), name='account_signup'),
+    url(r'^login/$', LoginView.as_view(), name='account_login'),
+    url(r'^logout/$', LogoutView.as_view(), name='account_logout'),
 ]

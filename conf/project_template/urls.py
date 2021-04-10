@@ -15,21 +15,25 @@ Including another URLconf
 """
 import os
 from django.contrib import admin
+from django.conf import settings
 from django.urls import path, include
+from django.conf.urls import url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'', include('apps.core.urls'))
 ]
 
-# addgn app urls..
+# adding app urls..
 for app in os.listdir('apps'):
-    if 'urls.py' in os.listdir('apps/'+ app):
+    if app != 'core' and 'urls.py' in os.listdir('apps/'+ app):
         urlpatterns += [
             path(app+'/', include('apps.'+app+'.urls'), name=app)
         ]
 
 
-if settings.DEBUG:
+if getattr(settings, 'DJDT', False):
+    import debug_toolbar
     urlpatterns += [
-        path('__debug__/', include('debug_toolbar.urls')),
+        path('__debug__/', include(debug_toolbar.urls)),
     ]
