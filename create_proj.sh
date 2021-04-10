@@ -1,7 +1,11 @@
-python3 -m venv venv
+python3.9 -m venv venv
 source venv/bin/activate
+<<<<<<< HEAD
 pip install --upgrade pip
 pip install django split-settings django-allauth django-debug-toolbar
+=======
+pip install django split-settings
+>>>>>>> automate_2
 pip freeze > requirements.txt
 django-admin startproject project --verbosity 2 --template ./conf/project_template
 cd project/apps

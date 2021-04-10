@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-CORE_INSTALLED_APPS = [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -39,19 +39,7 @@ CORE_INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
-INTERNAL_IPS = [
-    '127.0.0.1',
-]
-INSTALLED_APPS =[] # define if their is no order required corresponding to others
-
-WEIGHTED_INSTALLED_APPS = [
-    # (weight, app_name),
-]
-
-ROOT_URLCONF = '{{ project_name }}.urls'
-
-"""TODO: implement weighted middleware """
-CORE_MIDDLEWARE = [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -61,41 +49,20 @@ CORE_MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-MIDDLEWARE = []  # define if their is no order required corresponding to others
+ROOT_URLCONF = '{{ project_name }}.urls'
 
-WEIGHTED_MIDDLEWARE = [
-    # (weight, middleware name),
-]
-
-<<<<<<< HEAD
-"""TODO: implement weighted context peprocessor also """
-CONTEXT_PROCESSORS = [
-    'django.template.context_processors.debug',
-    'django.template.context_processors.request',
-    'django.contrib.auth.context_processors.auth',
-    'django.contrib.messages.context_processors.messages',
-]
-
-ROOT_URLCONF = 'urls'
-
-=======
->>>>>>> automate_2
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
-<<<<<<< HEAD
-            'context_processors': CONTEXT_PROCESSORS,
-=======
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
->>>>>>> automate_2
         },
     },
 ]
@@ -132,8 +99,22 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# Internationalization
+# https://docs.djangoproject.com/en/{{ docs_version }}/topics/i18n/
+
+LANGUAGE_CODE = 'en-us'
+
+TIME_ZONE = 'UTC'
+
+USE_I18N = True
+
+USE_L10N = True
+
+USE_TZ = True
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/{{ docs_version }}/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR.joinpath('static')

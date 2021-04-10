@@ -30,8 +30,7 @@ LANGUAGES = [
     ('zh-hans', _('Chinese'))
 ]
 
-
-LOCALE_PATHS = [BASE_DIR.joinpath('locale')]
+LOCALE_PATHS = (BASE_DIR.joinpath('locale'),)
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#language-code
 LANGUAGE_CODE = 'en-us'
@@ -43,4 +42,3 @@ USE_I18N = True
 USE_L10N = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
-
